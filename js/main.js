@@ -1,223 +1,261 @@
-/* =========================================
-   FAVOUR AKINTADE — PORTFOLIO SCRIPTS
-   Blue Ocean Theme · 2025
-   ========================================= */
+/* Favour Akintade — studio interactions */
 
-document.addEventListener('DOMContentLoaded', () => {
+(() => {
+  const body = document.body;
+  const nav = document.getElementById('siteNav');
+  const menuBtn = document.getElementById('menuBtn');
+  const veil = document.getElementById('veil');
+  const mq = window.matchMedia('(max-width: 1180px)');
 
-  // =========================================
-  // ANIMATED WAVE CANVAS BACKGROUND
-  // =========================================
-  const canvas = document.getElementById('waveCanvas');
-  const ctx = canvas.getContext('2d');
+  const closeNav = () => {
+    body.classList.remove('nav-open');
+    if (menuBtn) {
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open menu');
+    }
+    if (!document.getElementById('pdfModal')?.classList.contains('is-open')) {
+      body.style.overflow = '';
+    }
+  };
 
-  let W, H, animFrame;
+  const openNav = () => {
+    body.classList.add('nav-open');
+    if (menuBtn) {
+      menuBtn.setAttribute('aria-expanded', 'true');
+      menuBtn.setAttribute('aria-label', 'Close menu');
+    }
+    if (mq.matches) body.style.overflow = 'hidden';
+  };
 
-  function resizeCanvas() {
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-
-  // Wave configuration
-  const waves = [
-    { amplitude: 60,  frequency: 0.008, speed: 0.012, yOffset: 0.35, alpha: 0.18, color: '#1a5fb4' },
-    { amplitude: 45,  frequency: 0.012, speed: 0.018, yOffset: 0.50, alpha: 0.14, color: '#2563eb' },
-    { amplitude: 70,  frequency: 0.006, speed: 0.008, yOffset: 0.65, alpha: 0.12, color: '#0ea5e9' },
-    { amplitude: 35,  frequency: 0.016, speed: 0.022, yOffset: 0.78, alpha: 0.10, color: '#38bdf8' },
-    { amplitude: 50,  frequency: 0.010, speed: 0.014, yOffset: 0.88, alpha: 0.16, color: '#60a5fa' },
-  ];
-
-  let time = 0;
-
-  function drawWaves() {
-    ctx.clearRect(0, 0, W, H);
-
-    // Deep background gradient
-    const bg = ctx.createLinearGradient(0, 0, 0, H);
-    bg.addColorStop(0,   'rgba(5, 13, 26, 0)');
-    bg.addColorStop(0.5, 'rgba(10, 22, 40, 0.2)');
-    bg.addColorStop(1,   'rgba(14, 52, 96, 0.12)');
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, W, H);
-
-    waves.forEach((wave) => {
-      ctx.beginPath();
-
-      const baseY = H * wave.yOffset;
-      const phase = time * wave.speed;
-
-      ctx.moveTo(0, baseY);
-
-      for (let x = 0; x <= W; x += 4) {
-        const y = baseY
-          + Math.sin(x * wave.frequency + phase) * wave.amplitude
-          + Math.sin(x * wave.frequency * 1.7 + phase * 0.6) * (wave.amplitude * 0.35);
-        ctx.lineTo(x, y);
-      }
-
-      ctx.lineTo(W, H);
-      ctx.lineTo(0, H);
-      ctx.closePath();
-
-      const grad = ctx.createLinearGradient(0, baseY - wave.amplitude, 0, H);
-      grad.addColorStop(0, wave.color.replace(')', `, ${wave.alpha})`).replace('rgb', 'rgba').replace('#', ''));
-
-      // Parse hex color for gradient
-      const hex = wave.color;
-      const r = parseInt(hex.slice(1, 3), 16);
-      const g = parseInt(hex.slice(3, 5), 16);
-      const b = parseInt(hex.slice(5, 7), 16);
-
-      const fillGrad = ctx.createLinearGradient(0, baseY - wave.amplitude, 0, H);
-      fillGrad.addColorStop(0, `rgba(${r},${g},${b},${wave.alpha})`);
-      fillGrad.addColorStop(1, `rgba(${r},${g},${b},${wave.alpha * 0.3})`);
-
-      ctx.fillStyle = fillGrad;
-      ctx.fill();
-
-      // Draw the wave line itself (glowing edge)
-      ctx.beginPath();
-      ctx.moveTo(0, baseY);
-      for (let x = 0; x <= W; x += 4) {
-        const y = baseY
-          + Math.sin(x * wave.frequency + phase) * wave.amplitude
-          + Math.sin(x * wave.frequency * 1.7 + phase * 0.6) * (wave.amplitude * 0.35);
-        ctx.lineTo(x, y);
-      }
-      ctx.strokeStyle = `rgba(${r},${g},${b},${wave.alpha * 2.5})`;
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      if (body.classList.contains('nav-open')) closeNav();
+      else openNav();
     });
-
-    time++;
-    animFrame = requestAnimationFrame(drawWaves);
   }
 
-  drawWaves();
+  if (veil) veil.addEventListener('click', closeNav);
 
-
-  // =========================================
-  // CUSTOM CURSOR
-  // =========================================
-  const cursor    = document.getElementById('cursor');
-  const cursorRing = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', (e) => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx + 'px';
-    cursor.style.top  = my + 'px';
-  });
-
-  (function animateRing() {
-    rx += (mx - rx) * 0.13;
-    ry += (my - ry) * 0.13;
-    cursorRing.style.left = rx + 'px';
-    cursorRing.style.top  = ry + 'px';
-    requestAnimationFrame(animateRing);
-  })();
-
-  document.querySelectorAll('a, button, .tab-btn, .project-card, input, textarea, select').forEach((el) => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform    = 'translate(-50%,-50%) scale(2.2)';
-      cursorRing.style.transform = 'translate(-50%,-50%) scale(1.5)';
-      cursorRing.style.opacity  = '0.9';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.transform    = 'translate(-50%,-50%) scale(1)';
-      cursorRing.style.transform = 'translate(-50%,-50%) scale(1)';
-      cursorRing.style.opacity  = '0.5';
+  document.querySelectorAll('#siteNav a').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (mq.matches) closeNav();
     });
   });
 
-
-  // =========================================
-  // EXPERTISE TABS
-  // =========================================
-  document.querySelectorAll('.tab-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const tabId = btn.getAttribute('data-tab');
-      document.querySelectorAll('.tab-btn').forEach((b) => b.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach((t) => t.classList.remove('active'));
-      btn.classList.add('active');
-      const target = document.getElementById('tab-' + tabId);
-      if (target) target.classList.add('active');
-    });
-  });
-
-
-  // =========================================
-  // SCROLL FADE-UP ANIMATIONS
-  // =========================================
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-  document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
-
-
-  // =========================================
-  // ACTIVE NAV HIGHLIGHT ON SCROLL
-  // =========================================
-  const sections  = document.querySelectorAll('section[id]');
-  const navLinks  = document.querySelectorAll('.nav-links a');
-
-  const navObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinks.forEach((link) => {
-            link.style.color = '';
-            if (link.getAttribute('href') === '#' + id) {
-              link.style.color = 'var(--sky)';
-            }
-          });
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
-
-  sections.forEach((s) => navObserver.observe(s));
-
-
-  // =========================================
-  // NAVBAR SCROLL SHADOW
-  // =========================================
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.4)';
-    } else {
-      navbar.style.boxShadow = 'none';
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeNav();
+      closePdf();
     }
   });
 
+  mq.addEventListener('change', (e) => {
+    if (!e.matches) closeNav();
+  });
 
-  // =========================================
-  // CONTACT FORM SUBMIT FEEDBACK
-  // =========================================
-  const submitBtn = document.getElementById('formSubmitBtn');
-  if (submitBtn) {
-    submitBtn.addEventListener('click', () => {
-      const original = submitBtn.textContent;
-      submitBtn.textContent = '✓ Message Sent!';
-      submitBtn.style.background = 'linear-gradient(135deg, #16a34a, #15803d)';
-      setTimeout(() => {
-        submitBtn.textContent = original;
-        submitBtn.style.background = '';
-      }, 3000);
+  /* Lagos clock */
+  const clockEls = document.querySelectorAll('[data-clock]');
+  const tick = () => {
+    const t = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Africa/Lagos',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    }).format(new Date());
+    clockEls.forEach((el) => {
+      el.textContent = t;
+    });
+  };
+  if (clockEls.length) {
+    tick();
+    setInterval(tick, 30000);
+  }
+
+  /* Expertise tabs */
+  const tabButtons = document.querySelectorAll('[role="tab"]');
+  const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+
+  const activateTab = (id) => {
+    tabButtons.forEach((btn) => {
+      const on = btn.dataset.tab === id;
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-selected', on ? 'true' : 'false');
+      btn.tabIndex = on ? 0 : -1;
+    });
+    tabPanels.forEach((panel) => {
+      const on = panel.id === 'tab-' + id;
+      panel.classList.toggle('is-active', on);
+      panel.hidden = !on;
+    });
+  };
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+    btn.addEventListener('keydown', (e) => {
+      const list = [...tabButtons];
+      const i = list.indexOf(btn);
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const next = e.key === 'ArrowRight'
+          ? list[(i + 1) % list.length]
+          : list[(i - 1 + list.length) % list.length];
+        next.focus();
+        activateTab(next.dataset.tab);
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-jump-tab]').forEach((el) => {
+    el.addEventListener('click', () => activateTab(el.dataset.jumpTab));
+  });
+
+  /* Scroll spy */
+  const navLinks = document.querySelectorAll('#siteNav > a[href^="#"]');
+  const sections = document.querySelectorAll('main section[id]');
+  const spy = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        navLinks.forEach((link) => {
+          link.classList.toggle('is-active', link.getAttribute('href') === '#' + id);
+        });
+      });
+    },
+    { rootMargin: '-35% 0px -55% 0px', threshold: 0 }
+  );
+  sections.forEach((s) => spy.observe(s));
+
+  /* Reveal */
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-in'));
+  }
+
+  /* Contact form */
+  const form = document.getElementById('contactForm');
+  const formNote = document.getElementById('formNote');
+  const formBtn = document.getElementById('formBtn');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const honey = form.querySelector('[name="_gotcha"]');
+      if (honey && honey.value) return;
+
+      const data = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        topic: form.topic.value,
+        message: form.message.value.trim(),
+      };
+
+      if (!data.name || !data.email || !data.message) {
+        formNote.textContent = 'Name, email, and a message are required.';
+        formNote.dataset.state = 'error';
+        return;
+      }
+
+      formBtn.disabled = true;
+      formBtn.textContent = 'Sending…';
+      formNote.textContent = '';
+      formNote.dataset.state = '';
+
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/meetfavourakintade@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            ...data,
+            _subject: 'Portfolio — ' + data.topic,
+          }),
+        });
+        if (!res.ok) throw new Error('send failed');
+        form.reset();
+        formNote.textContent = 'Message sent. I’ll reply to your email.';
+        formNote.dataset.state = 'ok';
+        formBtn.textContent = 'Message sent';
+        setTimeout(() => {
+          formBtn.disabled = false;
+          formBtn.textContent = 'Send message';
+        }, 2800);
+      } catch (err) {
+        const subject = encodeURIComponent('Portfolio — ' + data.topic);
+        const bodyText = encodeURIComponent(
+          data.message + '\n\n— ' + data.name + ' (' + data.email + ')'
+        );
+        window.location.href =
+          'mailto:meetfavourakintade@gmail.com?subject=' + subject + '&body=' + bodyText;
+        formNote.textContent = 'Opening your email app to send the message.';
+        formNote.dataset.state = 'ok';
+        formBtn.disabled = false;
+        formBtn.textContent = 'Send message';
+      }
     });
   }
 
-});
+  /* PDF modal */
+  const modal = document.getElementById('pdfModal');
+  const frame = document.getElementById('pdfFrame');
+  const modalTitle = document.getElementById('pdfTitle');
+  const pdfs = {
+    ibm: {
+      src: 'cv/IBM_Java_Developer_Certificate.pdf',
+      title: 'IBM Java Developer — Professional Certificate',
+    },
+    escaide: {
+      src: 'cv/ESCAIDE_2025_Certificate.pdf',
+      title: 'ESCAIDE 2025 — Certificate of Attendance',
+    },
+  };
+
+  function openPdf(key) {
+    const item = pdfs[key];
+    if (!item || !modal) return;
+    frame.src = item.src;
+    modalTitle.textContent = item.title;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    body.style.overflow = 'hidden';
+    const closeBtn = document.getElementById('pdfClose');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closePdf() {
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    frame.src = '';
+    if (!body.classList.contains('nav-open')) body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-pdf]').forEach((btn) => {
+    btn.addEventListener('click', () => openPdf(btn.dataset.pdf));
+  });
+
+  const pdfClose = document.getElementById('pdfClose');
+  if (pdfClose) pdfClose.addEventListener('click', closePdf);
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closePdf();
+    });
+  }
+
+  window.openPdfModal = openPdf;
+})();
