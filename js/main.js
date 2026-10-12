@@ -175,7 +175,7 @@
       formNote.dataset.state = '';
 
       try {
-        const res = await fetch('https://formsubmit.co/ajax/meetfavourakintade@gmail.com', {
+        const res = await fetch('https://formsubmit.co/ajax/favourpamilerin1@gmail.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -201,7 +201,7 @@
           data.message + '\n\n— ' + data.name + ' (' + data.email + ')'
         );
         window.location.href =
-          'mailto:meetfavourakintade@gmail.com?subject=' + subject + '&body=' + bodyText;
+          'mailto:favourpamilerin1@gmail.com?subject=' + subject + '&body=' + bodyText;
         formNote.textContent = 'Opening your email app to send the message.';
         formNote.dataset.state = 'ok';
         formBtn.disabled = false;
@@ -218,10 +218,6 @@
     ibm: {
       src: 'cv/IBM_Java_Developer_Certificate.pdf',
       title: 'IBM Java Developer — Professional Certificate',
-    },
-    escaide: {
-      src: 'cv/ESCAIDE_2025_Certificate.pdf',
-      title: 'ESCAIDE 2025 — Certificate of Attendance',
     },
   };
 
