@@ -4,21 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Favour Akintade | Software Developer CV</title>
+  <meta name="description" content="Favour Akintade's software development CV: frontend, Flutter, selected web projects, and IBM Java Developer certification." />
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; background: #eef1f6; color: #182233; font: 15px/1.6 system-ui, sans-serif; }
+    body { margin: 0; background: #eef1f6; color: #182233; font: 15px/1.5 system-ui, sans-serif; }
     main { max-width: 850px; margin: 32px auto; padding: 48px; background: white; }
     h1 { margin: 0; font-size: 32px; line-height: 1.2; }
     h2 { margin: 28px 0 8px; font-size: 18px; border-bottom: 1px solid #ccd4df; padding-bottom: 6px; }
     h3 { margin: 16px 0 4px; font-size: 16px; }
     p { margin: 8px 0; }
+    ul { margin: 6px 0 12px; padding-left: 20px; }
+    li { margin: 4px 0; }
+    .project-stack { color: #48566b; font-size: 13px; margin: 2px 0; }
     a { color: #244eb1; overflow-wrap: anywhere; }
     .role { color: #244eb1; font-size: 18px; font-weight: 600; }
     .actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 24px; }
     button { padding: 10px 16px; border: 0; border-radius: 5px; background: #244eb1; color: white; font: inherit; cursor: pointer; }
     button:focus-visible, a:focus-visible { outline: 3px solid #6b8eff; outline-offset: 3px; }
     @media (max-width: 600px) { main { margin: 0; padding: 24px; } h1 { font-size: 28px; } }
-    @media print { body { background: white; font-size: 11pt; } main { margin: 0; max-width: none; padding: 0; } .actions { display: none; } h2, h3 { break-after: avoid; } p { orphans: 3; widows: 3; } a { color: inherit; } }
+    @media print { body { background: white; font-size: 10pt; line-height: 1.35; } main { margin: 0; max-width: none; padding: 0; } .actions { display: none; } h1 { font-size: 24pt; } h2 { font-size: 12pt; margin-top: 16px; } h3 { font-size: 10.5pt; margin-top: 10px; } .role { font-size: 12pt; } .project-stack { font-size: 9pt; } p, li { margin: 4px 0; } ul { margin-bottom: 8px; } h2, h3, .project-stack { break-after: avoid; } article { break-inside: avoid; } p, li { orphans: 3; widows: 3; } a { color: inherit; } }
     @page { size: A4; margin: 16mm; }
   </style>
 </head>
@@ -29,22 +33,40 @@
     <p class="role">Software Developer | Frontend, Flutter &amp; Java</p>
     <p>Lagos, Nigeria | Open to remote and onsite development roles</p>
     <p><a href="mailto:favourpamilerin1@gmail.com">favourpamilerin1@gmail.com</a> | <a href="tel:+2347050830039">+234 705 083 0039</a></p>
-    <p><a href="https://github.com/PAMPAM-byte">github.com/PAMPAM-byte</a> | <a href="https://www.linkedin.com/in/favour-akintade-394a55342">LinkedIn</a></p>
-    <h2>Profile</h2>
-    <p>Software developer focused on responsive web applications and Flutter interfaces, with Java backend training through the IBM Java Developer Professional Certificate. Project work spans AI-assisted learning, trading alerts, and a product storefront.</p>
+    <p><a href="https://github.com/PAMPAM-byte">github.com/PAMPAM-byte</a> | <a href="https://www.linkedin.com/in/favour-akintade-394a55342">linkedin.com/in/favour-akintade-394a55342</a></p>
+    <h2>Professional summary</h2>
+    <p>Software developer focused on responsive, accessible web interfaces and Flutter mobile development. Project work includes an AI learning platform, a trading alerts application, and a product storefront using React, Next.js, Vite, and JavaScript. IBM-certified Java Developer with training in Spring, REST APIs, databases, and cloud-native development.</p>
     <h2>Technical skills</h2>
-    <p><strong>Web:</strong> HTML5, CSS3, JavaScript (ES6+), React, Next.js, Vite, responsive layouts, accessibility, component-based interfaces, API integration basics.</p>
-    <p><strong>Mobile:</strong> Flutter, Dart, widgets, navigation, forms, theming, app state, local persistence, mobile API integration.</p>
-    <p><strong>Java training:</strong> Object-oriented programming, Spring Boot, Spring MVC, Maven, REST APIs, relational and NoSQL databases, Docker, microservices, cloud-native development.</p>
-    <p><strong>Tools:</strong> Git, GitHub, VS Code, Android Studio, Figma.</p>
+    <p><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), React, Next.js, Vite; responsive layouts, web accessibility, component-based interfaces, API integration basics.</p>
+    <p><strong>Mobile:</strong> Flutter, Dart; widgets, navigation, forms, theming, app state, local persistence, API integration.</p>
+    <p><strong>Backend &amp; cloud training:</strong> Java, object-oriented programming, Spring Boot, Spring MVC, Maven, REST APIs, MySQL, NoSQL, Docker, microservices, cloud-native development, DevOps, Agile.</p>
+    <p><strong>Development tools:</strong> Git, GitHub, VS Code, Android Studio, Figma; version control, prototyping, cross-browser compatibility.</p>
     <h2>Selected projects</h2>
-    <h3>Nannoy | Next.js, React</h3>
-    <p>AI learning platform for African career-switchers with personalised courses, a voice and text mentor, and verifiable certificates. <a href="https://nannoy.com">nannoy.com</a></p>
-    <h3>SetupRadar | Vite, React</h3>
-    <p>Trading companion with market monitoring and real-time setup alerts across markets and timeframes. <a href="https://setupradar-one.vercel.app/">setupradar-one.vercel.app</a></p>
-    <h3>Josephine FreshHome | HTML, CSS, JavaScript</h3>
-    <p>Home-care product website with a catalogue, WhatsApp ordering, wholesale, and souvenir flows. <a href="https://josephinefreshhome.vercel.app/">josephinefreshhome.vercel.app</a></p>
-    <h2>Technical credential</h2>
+    <article>
+      <h3>Nannoy &mdash; AI learning platform</h3>
+      <p class="project-stack">Next.js, React | <a href="https://nannoy.com">nannoy.com</a></p>
+      <ul>
+        <li>Learning platform for African career-switchers with an interview-led flow and personalised course generation.</li>
+        <li>Features Nora, a voice and text lesson mentor, and certificates employers can verify.</li>
+      </ul>
+    </article>
+    <article>
+      <h3>SetupRadar &mdash; Trading alerts application</h3>
+      <p class="project-stack">Vite, React | <a href="https://setupradar-one.vercel.app/">setupradar-one.vercel.app</a></p>
+      <ul>
+        <li>Trading companion for monitoring markets and identifying matching trading setups.</li>
+        <li>Real-time setup alerts across markets and timeframes.</li>
+      </ul>
+    </article>
+    <article>
+      <h3>Josephine FreshHome &mdash; Product storefront</h3>
+      <p class="project-stack">HTML, CSS, JavaScript | <a href="https://josephinefreshhome.vercel.app/">josephinefreshhome.vercel.app</a></p>
+      <ul>
+        <li>Product catalogue for a home-care brand with WhatsApp ordering.</li>
+        <li>Dedicated wholesale and souvenir enquiry flows.</li>
+      </ul>
+    </article>
+    <h2>Certification</h2>
     <p><strong>IBM Java Developer Professional Certificate</strong> | IBM &amp; Coursera | 21 January 2026</p>
     <p>Eleven courses covering Java, Spring, databases, cloud, Docker, microservices, DevOps, Git/GitHub, and generative AI for software development. <a href="https://coursera.org/verify/professional-cert/J2GV0EBFNGFC">Verify credential</a></p>
   </main>
