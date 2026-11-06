@@ -7,6 +7,23 @@
   const veil = document.getElementById('veil');
   const mq = window.matchMedia('(max-width: 960px)');
 
+  /* Always open at the top, not at a restored position or #section */
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  window.scrollTo(0, 0);
+  window.addEventListener('pageshow', () => window.scrollTo(0, 0));
+
+  /* In-page links scroll without writing #section into the address bar */
+  const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('a[href^="#"]:not(.skip)').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: calm ? 'auto' : 'smooth' });
+    });
+  });
+
   const closeNav = () => {
     body.classList.remove('nav-open');
     if (menuBtn) {
