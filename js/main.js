@@ -1,11 +1,11 @@
-/* Favour Akintade — studio interactions */
+/* Favour Akintade — monochrome interactions */
 
 (() => {
   const body = document.body;
   const nav = document.getElementById('siteNav');
   const menuBtn = document.getElementById('menuBtn');
   const veil = document.getElementById('veil');
-  const mq = window.matchMedia('(max-width: 1180px)');
+  const mq = window.matchMedia('(max-width: 960px)');
 
   const closeNav = () => {
     body.classList.remove('nav-open');
@@ -71,43 +71,34 @@
     setInterval(tick, 30000);
   }
 
-  /* Expertise tabs */
-  const tabButtons = document.querySelectorAll('[role="tab"]');
-  const tabPanels = document.querySelectorAll('[role="tabpanel"]');
-
-  const activateTab = (id) => {
-    tabButtons.forEach((btn) => {
-      const on = btn.dataset.tab === id;
-      btn.classList.toggle('is-active', on);
-      btn.setAttribute('aria-selected', on ? 'true' : 'false');
-      btn.tabIndex = on ? 0 : -1;
+  /* Header: border once scrolled, inverted over black slabs */
+  const header = document.getElementById('siteHeader');
+  const slabs = document.querySelectorAll('.slab');
+  const paintHeader = () => {
+    if (!header) return;
+    const probe = header.offsetHeight / 2;
+    let dark = false;
+    slabs.forEach((s) => {
+      const r = s.getBoundingClientRect();
+      if (r.top <= probe && r.bottom >= probe) dark = true;
     });
-    tabPanels.forEach((panel) => {
-      const on = panel.id === 'tab-' + id;
-      panel.classList.toggle('is-active', on);
-      panel.hidden = !on;
-    });
+    header.classList.toggle('is-dark', dark);
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
   };
+  paintHeader();
+  window.addEventListener('scroll', paintHeader, { passive: true });
+  window.addEventListener('resize', paintHeader);
 
-  tabButtons.forEach((btn) => {
-    btn.addEventListener('click', () => activateTab(btn.dataset.tab));
-    btn.addEventListener('keydown', (e) => {
-      const list = [...tabButtons];
-      const i = list.indexOf(btn);
-      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-        e.preventDefault();
-        const next = e.key === 'ArrowRight'
-          ? list[(i + 1) % list.length]
-          : list[(i - 1 + list.length) % list.length];
-        next.focus();
-        activateTab(next.dataset.tab);
-      }
-    });
-  });
-
-  document.querySelectorAll('[data-jump-tab]').forEach((el) => {
-    el.addEventListener('click', () => activateTab(el.dataset.jumpTab));
-  });
+  /* Work: the project nearest the middle of the screen shows in colour */
+  const live = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle('is-live', entry.isIntersecting);
+      });
+    },
+    { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
+  );
+  document.querySelectorAll('.project').forEach((p) => live.observe(p));
 
   /* Scroll spy */
   const navLinks = document.querySelectorAll('#siteNav > a[href^="#"]');

@@ -5,50 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Favour Akintade | Software Developer</title>
   <meta name="description" content="Software developer in Lagos working with React, Next.js, Flutter, and Java. Explore projects, technical skills, and credentials." />
-  <meta name="theme-color" content="#080C14" />
+  <meta name="theme-color" content="#FFFFFF" />
   <meta property="og:title" content="Favour Akintade | Software Developer" />
   <meta property="og:description" content="Software developer in Lagos working with React, Next.js, Flutter, and Java. Explore projects, technical skills, and credentials." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:wght@400;500;600&family=Martian+Mono:wdth,wght@75..112.5,400;500&display=swap" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="site-header" id="siteHeader">
-    <a class="logo" href="#home" aria-label="Favour Akintade home">
-      FA<span>.</span>
-    </a>
-
     <nav class="site-nav" id="siteNav" aria-label="Sections">
-      <a href="#home" class="is-active">Home</a>
+      <a href="#work">Work</a>
       <a href="#about">About</a>
-      <a href="#expertise">Stack</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Journey</a>
-      <a href="#cv">CV</a>
-      <a href="#certificates">Certs</a>
+      <a href="#stack">Stack</a>
+      <a href="#credentials">Credentials</a>
       <a href="#contact">Contact</a>
-      <div class="nav-end">
-        <a class="status-pill" href="#contact">
-          <i></i> Open to roles
-        </a>
-        <div class="nav-socials">
-          <a href="https://www.linkedin.com/in/favour-akintade-394a55342" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="https://github.com/PAMPAM-byte" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-          </a>
-        </div>
+      <div class="nav-socials">
+        <a href="https://www.linkedin.com/in/favour-akintade-394a55342" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/PAMPAM-byte" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </nav>
 
-    <a class="status-pill status-pill--bar" href="#contact">
-      <i></i> Open
-    </a>
+    <a class="status" href="#contact"><span>Open to roles</span><i aria-hidden="true"></i></a>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
       <span></span><span></span>
     </button>
@@ -57,398 +40,230 @@
 
   <main id="main">
     <section class="hero" id="home">
-      <div class="hero-x" aria-hidden="true">×</div>
-      <div class="wrap hero-inner">
-        <p class="hero-kicker">
-          <span class="live-dot" aria-hidden="true"></span>
-          Open to roles
-          <span class="dot-sep" aria-hidden="true"></span>
-          Lagos
-          <span class="dot-sep" aria-hidden="true"></span>
-          <span data-clock>—</span>&nbsp;WAT
-        </p>
-        <h1 class="hero-name">Favour <span>Akintade</span></h1>
-        <p class="hero-legal">Software Developer &middot; Frontend, Flutter &amp; Java</p>
-        <p class="hero-thesis">I build web experiences and mobile interfaces that make everyday tasks simpler. My focus is responsive frontend development, Flutter apps, and Java &mdash; turning ideas into software people can use.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">Explore projects</a>
-          <a class="btn btn-ghost" href="#cv">View developer CV</a>
-        </div>
-        <div class="hero-chips">
-          <a class="chip" href="#expertise" data-jump-tab="fe">Frontend / React</a>
-          <a class="chip" href="#expertise" data-jump-tab="fe">Next.js</a>
-          <a class="chip" href="#expertise" data-jump-tab="mobile">Flutter / Dart</a>
-          <a class="chip" href="#expertise" data-jump-tab="java">Java / Spring</a>
-          <a class="chip" href="https://github.com/PAMPAM-byte" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
+      <div class="wrap hero-grid">
+        <figure class="hero-photo">
+          <img src="images/photo.jpg" alt="Portrait of Favour Akintade" width="720" height="900" fetchpriority="high" />
+        </figure>
+        <div class="hero-copy">
+          <p class="label hero-meta">
+            <span>Software developer</span>
+            <span>Lagos, Nigeria</span>
+            <span><span data-clock>—</span> WAT</span>
+          </p>
+          <h1 class="hero-name" aria-label="Favour Akintade">
+            <span class="line"><span>Favour</span></span>
+            <span class="line"><span>Akintade</span></span>
+          </h1>
+          <div class="hero-foot">
+            <p class="hero-thesis">I build web experiences and mobile interfaces that make everyday tasks simpler. Frontend, Flutter, and Java.</p>
+            <div class="actions">
+              <a class="btn btn-solid" href="#work">See the work</a>
+              <a class="btn btn-line" href="cv/Favour_Akintade_Software_Developer_CV.html" target="_blank" rel="noopener noreferrer">Developer CV &nearr;</a>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+
+    <section class="slab" id="work">
       <div class="wrap">
-        <dl class="spec">
-          <div class="spec-item">
-            <dt class="spec-key">Availability</dt>
-            <dd class="spec-val">Development roles<small>Remote and onsite</small></dd>
-          </div>
-          <div class="spec-item">
-            <dt class="spec-key">Location</dt>
-            <dd class="spec-val">Lagos, Nigeria<small>West Africa · GMT+1</small></dd>
-          </div>
-          <div class="spec-item">
-            <dt class="spec-key">Credential</dt>
-            <dd class="spec-val">IBM Java Developer<small>Professional Certificate &middot; 2026</small></dd>
-          </div>
-          <div class="spec-item">
-            <dt class="spec-key">Focus</dt>
-            <dd class="spec-val">Web &amp; mobile<small>Frontend &middot; Flutter &middot; Java</small></dd>
-          </div>
-        </dl>
+        <div class="section-head">
+          <p class="label">Selected work</p>
+          <h2 class="title">Four live products.</h2>
+          <p class="lede">Everything else on this page is black and white. The colour belongs to the work.</p>
+        </div>
+
+        <div class="projects">
+          <article class="project reveal">
+            <a class="shot" href="https://nannoy.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+              <img src="images/projects/nannoy.jpg" alt="" width="1440" height="900" />
+            </a>
+            <div class="project-copy">
+              <p class="label">Edtech · AI</p>
+              <h3><a href="https://nannoy.com" target="_blank" rel="noopener noreferrer">Nannoy <span aria-hidden="true">&nearr;</span></a></h3>
+              <p>An AI learning platform for African career-switchers. It interviews you, generates a personalised course, and puts Nora — a voice and text mentor — on every lesson, with verified certificates employers can check.</p>
+              <ul class="tech"><li>Next.js</li><li>React</li><li>AI</li></ul>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <a class="shot" href="https://talkingstage.buzz" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+              <img src="images/projects/talkingstage.png" alt="" width="1440" height="900" loading="lazy" />
+            </a>
+            <div class="project-copy">
+              <p class="label">Dating · AI</p>
+              <h3><a href="https://talkingstage.buzz" target="_blank" rel="noopener noreferrer">TalkingStage <span aria-hidden="true">&nearr;</span></a></h3>
+              <p>A Nigerian-first AI dating experience. Users meet AI characters, each with their own backstory and style, and chat in English or Pidgin — with per-character memory controls, conversation management, and safety reporting.</p>
+              <ul class="tech"><li>Next.js</li><li>Tailwind CSS</li><li>AI</li></ul>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <a class="shot" href="https://setupradar-one.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+              <img src="images/projects/setupradar.jpg" alt="" width="1440" height="900" loading="lazy" />
+            </a>
+            <div class="project-copy">
+              <p class="label">Markets · Alerts</p>
+              <h3><a href="https://setupradar-one.vercel.app/" target="_blank" rel="noopener noreferrer">SetupRadar <span aria-hidden="true">&nearr;</span></a></h3>
+              <p>A trading companion that watches the markets around the clock and fires a real-time alert the moment your exact setup forms — across markets and timeframes.</p>
+              <ul class="tech"><li>Vite</li><li>React</li><li>Alerts</li></ul>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <a class="shot" href="https://josephinefreshhome.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+              <img src="images/projects/josephine.jpg" alt="" width="1440" height="900" loading="lazy" />
+            </a>
+            <div class="project-copy">
+              <p class="label">Brand · Home care</p>
+              <h3><a href="https://josephinefreshhome.vercel.app/" target="_blank" rel="noopener noreferrer">Josephine FreshHome <span aria-hidden="true">&nearr;</span></a></h3>
+              <p>A product site for a home-care brand in Akure — liquid soap, Izal, shampoo — with a catalogue, WhatsApp ordering, wholesale, and souvenir flows.</p>
+              <ul class="tech"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
     <section id="about">
-      <div class="wrap">
-        <p class="kicker">whoami</p>
-        <div class="about-grid">
-          <div class="about-copy reveal">
-            <h2 class="display">Software built around people</h2>
-            <p>I am <strong>Favour Oluwapamilerin Akintade</strong>, a software developer based in Lagos. I work on responsive web applications and Flutter interfaces, with a growing foundation in Java backend development.</p>
-            <p>My project work spans an AI learning platform, a Nigerian-first AI dating platform, a trading alerts product, and a home-care storefront. I use <strong>React, Next.js, HTML, CSS, and JavaScript</strong> to create clear interfaces, and Flutter and Dart for mobile development.</p>
-            <p>My <strong>IBM Java Developer Professional Certificate</strong> covers Java, Spring, databases, and cloud-native development.</p>
-            <div class="facts">
-              <div class="fact"><b>4</b><span>Live projects across learning, dating, trading, and commerce</span></div>
-              <div class="fact"><b>Web</b><span>React, Next.js, and responsive frontend development</span></div>
-              <div class="fact"><b>Mobile</b><span>Flutter and Dart interfaces</span></div>
-              <div class="fact"><b>Java</b><span>IBM professional certificate &middot; 11 courses</span></div>
-            </div>
-          </div>
-          <aside class="portrait reveal">
-            <div class="portrait-frame">
-              <img src="images/photo.jpg" alt="Favour Akintade" width="720" height="900" />
-              <div class="portrait-meta">
-                <strong>Favour Akintade</strong>
-                <span>Software Developer &middot; Frontend &middot; Flutter &middot; Java</span>
-                <dl class="profile-dl">
-                  <div><dt>Email</dt><dd><a href="mailto:favourpamilerin1@gmail.com">favourpamilerin1@gmail.com</a></dd></div>
-                  <div><dt>Phone</dt><dd><a href="tel:+2347050830039">+234 705 083 0039</a></dd></div>
-                </dl>
-              </div>
-            </div>
-          </aside>
+      <div class="wrap about">
+        <div class="about-head reveal">
+          <p class="label">About</p>
+          <h2 class="title">Software built around people.</h2>
+        </div>
+        <div class="about-copy reveal">
+          <p>I’m <strong>Favour Oluwapamilerin Akintade</strong>, a software developer based in Lagos. I work on responsive web applications and Flutter interfaces, with a growing foundation in Java backend development.</p>
+          <p>My project work spans an AI learning platform, a Nigerian-first AI dating platform, a trading alerts product, and a home-care storefront. I use React, Next.js, HTML, CSS, and JavaScript for the web, and Flutter and Dart for mobile.</p>
+          <dl class="facts">
+            <div><dt>Live projects</dt><dd>4</dd></div>
+            <div><dt>Web</dt><dd>React · Next.js</dd></div>
+            <div><dt>Mobile</dt><dd>Flutter · Dart</dd></div>
+            <div><dt>Backend</dt><dd>Java · Spring</dd></div>
+          </dl>
         </div>
       </div>
     </section>
 
-    <section id="expertise">
+    <section class="rule-top" id="stack">
       <div class="wrap">
-        <p class="kicker">stack</p>
-        <h2 class="display">Skills &amp; expertise</h2>
-        <p class="lede">The technologies I use for web and mobile projects, alongside my Java and backend training.</p>
-        <div class="tabs" role="tablist" aria-label="Expertise domains">
-          <button type="button" class="is-active" role="tab" id="tabbtn-fe" data-tab="fe" aria-selected="true" aria-controls="tab-fe">Frontend</button>
-          <button type="button" role="tab" id="tabbtn-mobile" data-tab="mobile" aria-selected="false" aria-controls="tab-mobile" tabindex="-1">Mobile</button>
-          <button type="button" role="tab" id="tabbtn-java" data-tab="java" aria-selected="false" aria-controls="tab-java" tabindex="-1">Java</button>
+        <div class="section-head">
+          <p class="label">Stack</p>
+          <h2 class="title">What I build with.</h2>
         </div>
-
-        <div class="tab-panel is-active" role="tabpanel" id="tab-fe" aria-labelledby="tabbtn-fe">
-          <div class="skill-col">
-            <h3>Development</h3>
+        <div class="stack">
+          <div class="stack-col reveal">
+            <h3>Frontend</h3>
             <ul>
               <li>HTML5, CSS3, JavaScript (ES6+)</li>
+              <li>React and Next.js</li>
               <li>Responsive, mobile-first interfaces</li>
-              <li>React.js fundamentals</li>
-              <li>UI/UX principles</li>
-              <li>Web accessibility</li>
-              <li>Git &amp; version control</li>
-            </ul>
-          </div>
-          <div class="skill-col">
-            <h3>Design &amp; tools</h3>
-            <ul>
-              <li>Figma / Canva for prototyping</li>
               <li>Component-based architecture</li>
-              <li>API integration basics</li>
-              <li>Cross-browser compatibility</li>
+              <li>Web accessibility</li>
+              <li>API integration</li>
             </ul>
+            <p class="tools">React · Next.js · Tailwind · Git · Figma</p>
           </div>
-          <div class="tools">
-            <span class="tool">HTML</span>
-            <span class="tool">CSS</span>
-            <span class="tool">JavaScript</span>
-            <span class="tool">React</span>
-            <span class="tool">Git</span>
-            <span class="tool">VS Code</span>
-            <span class="tool">Figma</span>
-            <span class="tool">Canva</span>
-          </div>
-        </div>
-
-        <div class="tab-panel" role="tabpanel" id="tab-mobile" aria-labelledby="tabbtn-mobile" hidden>
-          <div class="skill-col">
-            <h3>Flutter</h3>
+          <div class="stack-col reveal">
+            <h3>Mobile</h3>
             <ul>
-              <li>Flutter (Dart) — iOS and Android from one codebase</li>
+              <li>Flutter and Dart for iOS and Android</li>
               <li>Widgets, layouts, and navigation</li>
               <li>Stateful and stateless UI</li>
               <li>Forms, lists, and screen flows</li>
-              <li>Theming and responsive layouts</li>
-            </ul>
-          </div>
-          <div class="skill-col">
-            <h3>App craft</h3>
-            <ul>
-              <li>Component-based mobile architecture</li>
-              <li>API integration on mobile</li>
               <li>Local persistence and app state</li>
-              <li>Figma-to-Flutter UI build</li>
-              <li>Git &amp; version control</li>
+              <li>Figma-to-Flutter UI builds</li>
             </ul>
+            <p class="tools">Flutter · Dart · Android Studio · REST APIs</p>
           </div>
-          <div class="tools">
-            <span class="tool">Flutter</span>
-            <span class="tool">Dart</span>
-            <span class="tool">VS Code</span>
-            <span class="tool">Android Studio</span>
-            <span class="tool">Git</span>
-            <span class="tool">Figma</span>
-            <span class="tool">REST APIs</span>
-          </div>
-        </div>
-
-        <div class="tab-panel" role="tabpanel" id="tab-java" aria-labelledby="tabbtn-java" hidden>
-          <div class="skill-col">
+          <div class="stack-col reveal">
             <h3>Java &amp; backend</h3>
             <ul>
-              <li>Java programming, beginner to advanced</li>
-              <li>Object-oriented programming in Java</li>
-              <li>Spring Framework</li>
-              <li>Java with relational and NoSQL databases</li>
+              <li>Object-oriented Java</li>
+              <li>Spring Framework and Spring Boot</li>
               <li>RESTful API development</li>
-              <li>Capstone — real-world Java application</li>
+              <li>Relational and NoSQL databases</li>
+              <li>Docker and microservices</li>
+              <li>Cloud-native development</li>
             </ul>
-          </div>
-          <div class="skill-col">
-            <h3>Cloud &amp; DevOps</h3>
-            <ul>
-              <li>Cloud-native application development</li>
-              <li>Microservices architecture</li>
-              <li>Docker containers</li>
-              <li>DevOps principles &amp; Agile</li>
-              <li>Git &amp; GitHub collaboration</li>
-              <li>Generative AI for software development</li>
-            </ul>
-          </div>
-          <div class="tools">
-            <span class="tool">Java</span>
-            <span class="tool">Spring Boot</span>
-            <span class="tool">Spring MVC</span>
-            <span class="tool">Maven</span>
-            <span class="tool">Docker</span>
-            <span class="tool">Microservices</span>
-            <span class="tool">Git / GitHub</span>
-            <span class="tool">MySQL</span>
-            <span class="tool">NoSQL</span>
-            <span class="tool">Cloud Native</span>
-            <span class="tool">DevOps</span>
-            <span class="tool">Agile</span>
-          </div>
-          <div class="cred-banner">
-            <div>
-              <strong>IBM Java Developer — Professional Certificate</strong>
-              <span>IBM &amp; Coursera · 21 Jan 2026 · 11 courses</span>
-            </div>
-            <a href="https://coursera.org/verify/professional-cert/J2GV0EBFNGFC" target="_blank" rel="noopener noreferrer">Verify certificate →</a>
+            <p class="tools">Java · Spring · Maven · Docker · MySQL</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects">
+    <section class="rule-top" id="credentials">
       <div class="wrap">
-        <p class="kicker">ls ~/work</p>
-        <h2 class="display">Selected projects</h2>
-        <p class="lede">Four live web projects: AI-assisted learning, AI-powered dating, trading alerts, and a product storefront. Explore the interfaces and the stacks behind them.</p>
-        <div class="projects">
-          <article class="project project--featured reveal">
-            <div class="project-copy">
-              <p class="project-tag">Edtech · AI · Next.js</p>
-              <h3>Nannoy</h3>
-              <p>An AI learning platform for African career-switchers. The product interviews you, generates a personalised course, and puts Nora — a voice and text mentor — on every lesson, with verified certificates employers can check.</p>
-              <div class="tech">
-                <span>Next.js</span><span>React</span><span>AI</span><span>Edtech</span>
-              </div>
-              <a class="project-link" href="https://nannoy.com" target="_blank" rel="noopener noreferrer">View live site →</a>
-            </div>
-            <a class="preview" href="https://nannoy.com" target="_blank" rel="noopener noreferrer">
-              <span class="preview-bar" aria-hidden="true"><i></i><i></i><i></i><span>nannoy.com</span></span>
-              <img src="images/projects/nannoy.jpg" alt="Nannoy homepage — From any background to tech career" width="1440" height="900" />
-            </a>
-          </article>
-
-          <article class="project project--featured reveal">
-            <div class="project-copy">
-              <p class="project-tag">AI · Dating · Next.js</p>
-              <h3>TalkingStage</h3>
-              <p>A Nigerian-first AI dating experience. Users meet AI characters, each with their own backstory and style, and chat in English or Pidgin. The app has per-character memory controls, conversation management, and built-in safety reporting.</p>
-              <div class="tech"><span>Next.js</span><span>Tailwind CSS</span><span>AI</span></div>
-              <a class="project-link" href="https://talkingstage.buzz" target="_blank" rel="noopener noreferrer">View live site →</a>
-            </div>
-            <a class="preview" href="https://talkingstage.buzz" target="_blank" rel="noopener noreferrer">
-              <span class="preview-bar" aria-hidden="true"><i></i><i></i><i></i><span>talkingstage.buzz</span></span>
-              <img src="images/projects/talkingstage.png" alt="TalkingStage homepage — A little banter. A little chemistry." width="1440" height="900" loading="lazy" />
-            </a>
-          </article>
-
-          <article class="project reveal">
-            <a class="preview" href="https://setupradar-one.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <span class="preview-bar" aria-hidden="true"><i></i><i></i><i></i><span>setupradar-one.vercel.app</span></span>
-              <img src="images/projects/setupradar.jpg" alt="SetupRadar homepage — trading setup alerts" width="1440" height="900" loading="lazy" />
-            </a>
-            <div class="project-copy">
-              <p class="project-tag">Markets · Alerts · Vite</p>
-              <h3>SetupRadar</h3>
-              <p>A trading companion that watches the markets 24/7 and fires a real-time alert the moment your exact setup forms — across markets and timeframes.</p>
-              <div class="tech"><span>Vite</span><span>React</span><span>Alerts</span></div>
-              <a class="project-link" href="https://setupradar-one.vercel.app/" target="_blank" rel="noopener noreferrer">View live site →</a>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <a class="preview" href="https://josephinefreshhome.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <span class="preview-bar" aria-hidden="true"><i></i><i></i><i></i><span>josephinefreshhome.vercel.app</span></span>
-              <img src="images/projects/josephine.jpg" alt="Josephine FreshHome homepage — Clean home, fresh life" width="1440" height="900" loading="lazy" />
-            </a>
-            <div class="project-copy">
-              <p class="project-tag">Brand · Home care · Frontend</p>
-              <h3>Josephine FreshHome</h3>
-              <p>A product site for a home-care brand in Akure — liquid soap, Izal, shampoo — with catalogue, WhatsApp ordering, wholesale, and souvenir flows.</p>
-              <div class="tech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-              <a class="project-link" href="https://josephinefreshhome.vercel.app/" target="_blank" rel="noopener noreferrer">View live site →</a>
-            </div>
-          </article>
+        <div class="section-head">
+          <p class="label">Credentials</p>
+          <h2 class="title">Training and documents.</h2>
         </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="wrap">
-        <p class="kicker">git log</p>
-        <h2 class="display">Development journey</h2>
-        <p class="lede">Selected software projects and professional training in Java development.</p>
-        <div class="commits">
-          <article class="commit reveal">
-            <div class="commit-year">Projects</div>
-            <div class="commit-rail" aria-hidden="true"><span></span></div>
-            <div class="commit-body">
-              <span class="tag">Web development</span>
-              <h3 class="commit-role">Selected software projects</h3>
-              <p class="commit-org">Nannoy &middot; TalkingStage &middot; SetupRadar &middot; Josephine FreshHome</p>
-              <p class="commit-desc">Web project work across AI-assisted learning, AI-powered dating, trading alerts, and a product storefront. Explore the live projects above for their interfaces, features, and technology stacks.</p>
-            </div>
-          </article>
-<article class="commit reveal">
-            <div class="commit-year">2026</div>
-            <div class="commit-rail" aria-hidden="true"><span></span></div>
-            <div class="commit-body">
-              <span class="tag">Professional certificate</span>
-              <h3 class="commit-role">IBM Java Developer — Professional Certificate</h3>
-              <p class="commit-org">IBM &amp; Coursera · <a href="https://coursera.org/verify/professional-cert/J2GV0EBFNGFC" target="_blank" rel="noopener noreferrer">Verify →</a></p>
-              <p class="commit-desc">Eleven-course professional certificate covering full-stack Java. Spring Framework, HTML/CSS/JavaScript front ends with Java back ends, cloud, Docker, microservices, Git/GitHub, relational and NoSQL databases.</p>
-            </div>
-          </article>
-</div>
-      </div>
-    </section>
-
-    <section id="cv">
-      <div class="wrap">
-        <p class="kicker">~/developer-cv</p>
-        <h2 class="display">Developer CV</h2>
-        <p class="lede">A focused overview of my technical skills, selected projects, and training.</p>
-        <div class="files">
-          <article class="file-card reveal">
-            <p class="file-mark">CV &middot; Software development</p>
-            <h3>Software Developer</h3>
-            <p>Frontend and mobile development, selected web projects, and IBM Java training. Open the printable CV and use Print to save a PDF.</p>
-            <a class="btn btn-primary" href="cv/Favour_Akintade_Software_Developer_CV.html" target="_blank" rel="noopener noreferrer">View / print CV &nearr;</a>
-          </article>
-          <article class="file-card reveal">
-            <p class="file-mark">Code &middot; GitHub</p>
-            <h3>Explore my GitHub</h3>
-            <p>Browse my public repositories and development work on GitHub.</p>
-            <a class="btn btn-ghost" href="https://github.com/PAMPAM-byte" target="_blank" rel="noopener noreferrer">Visit GitHub &nearr;</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="certificates">
-      <div class="wrap">
-        <p class="kicker">gpg --verify</p>
-        <h2 class="display">Certificates</h2>
-        <p class="lede">IBM Java Developer training. Open the certificate or verify it with the issuer.</p>
-        <div class="certs">
-          <article class="cert reveal">
-            <div class="cert-head">
-              <p class="issuer">IBM &amp; Coursera</p>
+        <div class="creds">
+          <article class="cred reveal">
+            <p class="cred-when label">Jan 2026</p>
+            <div class="cred-body">
               <h3>IBM Java Developer Professional Certificate</h3>
+              <p>IBM &amp; Coursera · 11 courses. Full-stack Java with Spring, cloud-native architecture, Docker, microservices, DevOps, Git, relational and NoSQL databases, and generative AI for software development.</p>
             </div>
-            <div class="cert-body">
-              <p class="cert-date">Issued 21 Jan 2026 · 11 courses</p>
-              <p>Full-stack Java with Spring, cloud-native architecture, Docker, microservices, DevOps, Git/GitHub, relational and NoSQL databases, and generative AI for software development.</p>
-              <div class="tools cert-tools">
-                <span class="tool">Java</span><span class="tool">Spring Boot</span><span class="tool">Docker</span><span class="tool">Microservices</span>
-              </div>
-              <div class="cert-actions">
-                <button class="btn btn-primary" type="button" data-pdf="ibm">View certificate</button>
-                <a class="btn btn-ghost" href="https://coursera.org/verify/professional-cert/J2GV0EBFNGFC" target="_blank" rel="noopener noreferrer">Verify on Coursera</a>
-              </div>
+            <div class="cred-actions">
+              <button class="btn btn-solid" type="button" data-pdf="ibm">View certificate</button>
+              <a class="btn btn-line" href="https://coursera.org/verify/professional-cert/J2GV0EBFNGFC" target="_blank" rel="noopener noreferrer">Verify &nearr;</a>
             </div>
           </article>
-</div>
+          <article class="cred reveal">
+            <p class="cred-when label">CV</p>
+            <div class="cred-body">
+              <h3>Developer CV</h3>
+              <p>Technical skills, selected projects, and training on one page. Open it and use Print to save a PDF.</p>
+            </div>
+            <div class="cred-actions">
+              <a class="btn btn-solid" href="cv/Favour_Akintade_Software_Developer_CV.html" target="_blank" rel="noopener noreferrer">Open CV &nearr;</a>
+            </div>
+          </article>
+          <article class="cred reveal">
+            <p class="cred-when label">Code</p>
+            <div class="cred-body">
+              <h3>GitHub</h3>
+              <p>Public repositories and ongoing development work.</p>
+            </div>
+            <div class="cred-actions">
+              <a class="btn btn-line" href="https://github.com/PAMPAM-byte" target="_blank" rel="noopener noreferrer">Visit GitHub &nearr;</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section class="slab" id="contact">
       <div class="wrap">
-        <p class="kicker">mailto</p>
-        <h2 class="display">Let’s build something useful</h2>
-        <div class="contact-grid">
-          <div class="contact-copy reveal">
-            <p>Open to software development opportunities, remote or onsite. Get in touch about frontend engineering, Flutter development, Java roles, or a web project you want to build.</p>
-            <div class="contact-rows">
-              <a class="contact-row" href="mailto:favourpamilerin1@gmail.com">
-                <span class="k">Email</span>
-                <span class="v">favourpamilerin1@gmail.com</span>
-              </a>
-              <a class="contact-row" href="tel:+2347050830039">
-                <span class="k">Phone / WhatsApp</span>
-                <span class="v">+234 705 083 0039</span>
-              </a>
-              <div class="contact-row">
-                <span class="k">Location</span>
-                <span class="v">Lagos State, Nigeria — open to remote</span>
-              </div>
-              <div class="contact-row">
-                <span class="k">Local time</span>
-                <span class="v"><span data-clock>—</span> WAT · GMT+1</span>
-              </div>
-            </div>
+        <div class="section-head">
+          <p class="label">Contact</p>
+          <h2 class="title title-xl">Let’s build something useful.</h2>
+        </div>
+        <div class="contact">
+          <div class="contact-copy">
+            <p>Open to software development roles, remote or onsite, and to web projects you want built.</p>
+            <a class="contact-mail" href="mailto:favourpamilerin1@gmail.com">favourpamilerin1@gmail.com</a>
+            <dl class="contact-rows">
+              <div><dt>Phone / WhatsApp</dt><dd><a href="tel:+2347050830039">+234 705 083 0039</a></dd></div>
+              <div><dt>Location</dt><dd>Lagos, Nigeria — open to remote</dd></div>
+              <div><dt>Local time</dt><dd><span data-clock>—</span> WAT · GMT+1</dd></div>
+            </dl>
           </div>
-          <form class="form reveal" id="contactForm" novalidate>
-            <h3>Send a message</h3>
+          <form class="form" id="contactForm" novalidate>
             <div class="sr-only" aria-hidden="true">
               <label for="gotcha">Leave blank</label>
               <input type="text" id="gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
             </div>
             <div class="field">
               <label for="name">Name</label>
-              <input id="name" name="name" type="text" autocomplete="name" required placeholder="Your full name" />
+              <input id="name" name="name" type="text" autocomplete="name" required />
             </div>
             <div class="field">
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@email.com" />
+              <input id="email" name="email" type="email" autocomplete="email" required />
             </div>
             <div class="field">
-              <label for="topic">I’m reaching out about</label>
+              <label for="topic">Reaching out about</label>
               <select id="topic" name="topic">
                 <option>Frontend engineering role</option>
                 <option>Java / backend development role</option>
@@ -462,7 +277,7 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" required placeholder="Role, timeline, and anything I should know."></textarea>
             </div>
-            <button class="btn btn-primary" type="submit" id="formBtn">Send message</button>
+            <button class="btn btn-invert" type="submit" id="formBtn">Send message</button>
             <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
           </form>
         </div>
@@ -470,14 +285,9 @@
     </section>
   </main>
 
-  <footer class="site-foot">
+  <footer class="site-foot slab">
     <div class="wrap foot-inner">
-      <span class="foot-branch">
-        <i aria-hidden="true"></i>
-        main
-      </span>
-      <span class="pam">PAM_PAM</span>
-      <span>© 2026 Favour Oluwapamilerin Akintade · Lagos · <span data-clock>—</span> WAT</span>
+      <span>© 2026 Favour Oluwapamilerin Akintade</span>
       <span class="foot-links">
         <a href="https://www.linkedin.com/in/favour-akintade-394a55342" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/PAMPAM-byte" target="_blank" rel="noopener noreferrer">GitHub</a>
