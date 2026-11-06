@@ -227,8 +227,8 @@ section { padding: var(--section-y) 0; }
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  width: 13ch;
-  animation: type 1.4s steps(13) 0.6s both;
+  width: 18ch;
+  animation: type 1.4s steps(18) 0.6s both;
 }
 .status i {
   width: 0.55em;
@@ -240,7 +240,7 @@ section { padding: var(--section-y) 0; }
 .site-header.is-dark .status:hover { background: var(--slab-ink); color: var(--slab); }
 @keyframes type {
   from { width: 0; }
-  to { width: 13ch; }
+  to { width: 18ch; }
 }
 @keyframes blink {
   50% { opacity: 0; }
@@ -287,14 +287,18 @@ section { padding: var(--section-y) 0; }
 }
 
 .hero-photo {
-  overflow: hidden;
-  border-radius: 6px;
-  animation: unveil 1.2s var(--ease) both;
+  padding: 0.75rem;
+  margin: 0 0.875rem 0.875rem 0;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 0.875rem 0.875rem 0 var(--ink);
+  animation: fade 0.9s var(--ease) both;
 }
 .hero-photo img {
   width: 100%;
   aspect-ratio: 4 / 5;
-  max-height: calc(100svh - var(--header-h) - 5rem);
+  max-height: calc(100svh - var(--header-h) - 7rem);
+  animation: unveil 1.2s var(--ease) 0.15s both;
   object-fit: cover;
   object-position: center 20%;
 }
