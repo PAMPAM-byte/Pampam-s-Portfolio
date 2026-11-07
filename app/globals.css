@@ -17,9 +17,9 @@
   --wrap: 90rem;
   --header-h: 4.25rem;
 
-  --font-display: 'Archivo', 'Arial Narrow', system-ui, sans-serif;
-  --font-body: 'Instrument Sans', system-ui, sans-serif;
-  --font-mono: 'Martian Mono', ui-monospace, monospace;
+  --font-display: var(--font-archivo), 'Arial Narrow', system-ui, sans-serif;
+  --font-body: var(--font-instrument), system-ui, sans-serif;
+  --font-mono: var(--font-martian), ui-monospace, monospace;
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -323,7 +323,7 @@ section { padding: var(--section-y) 0; }
   font-weight: 800;
   text-transform: uppercase;
   font-size: 10vw;
-  font-size: 24.5cqi;
+  font-size: 28.5cqi;
   line-height: 0.8;
   letter-spacing: -0.015em;
   margin-left: -0.04em;
@@ -728,7 +728,7 @@ section { padding: var(--section-y) 0; }
 }
 
 @media (max-width: 640px) {
-  .hero-name { font-size: 24.5cqi; }
+  .hero-name { font-size: 28.5cqi; }
   .hero-meta { gap: 0.3rem 1.5rem; }
   .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .facts > div { padding-bottom: 1rem; }
